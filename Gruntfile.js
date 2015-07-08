@@ -18,6 +18,7 @@ module.exports = function(grunt) {
       combined_file_output: {
         files: {
           'public/js/components/components.js': [
+            'public/js/components/terminal.jsx'
           ]
         }
       }
