@@ -6,24 +6,24 @@ module.exports = function(grunt) {
     less: {
       development: {
         options: {
-          paths: ["css/less"],
+          paths: ["public/css/less"],
           yuicompress: true
         },
         files: {
-          "css/app.css": "css/less/app.less"
+          "public/css/app.css": "public/css/less/app.less"
         }
       }
     },
     react: {
       combined_file_output: {
         files: {
-          'js/components/components.js': [
+          'public/js/components/components.js': [
           ]
         }
       }
     },
     watch: {
-      files: ['css/less/*', 'js/components/*'],
+      files: ['public/css/less/*', 'public/js/components/*'],
       tasks: ['less', 'react']
     }
   });
