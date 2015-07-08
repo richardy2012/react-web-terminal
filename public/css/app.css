@@ -6771,3 +6771,11 @@ h1 {
   position: absolute;
   visibility: hidden;
 }
+body {
+  background-color: black;
+  color: white;
+}
+.terminalInput {
+  background-color: black;
+  color: white;
+}

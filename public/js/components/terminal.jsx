@@ -16,7 +16,12 @@
         return {data: []}
       },
       handleInput: function(command) {
+        function insert(str, index, value) {
+          return str.substr(0, index) + value + str.substr(index);
+        };
+
         var commands = this.state.data;
+        command.command = insert(command.command, 0, '$ ');
         commands.push(command);
         this.setState({data: commands});
         $.ajax({
@@ -70,8 +75,10 @@
       render: function() {
         return (
           <form className="terminalInput" onSubmit={this.handleInput}>
-            <input type="text" placeholder="$ " ref="command" />
-            <button type="submit" className="hideSubmit" />
+            <div className="form-group">
+              <input placeholder="$ " id="commandInput" type="text" style={{backgroundColor: 'black', color: 'white'}} ref="command" className="form-control" />
+              <button type="submit" className="hideSubmit" />
+            </div>
           </form>
         );
       }
