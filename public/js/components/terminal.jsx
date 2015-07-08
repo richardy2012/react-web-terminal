@@ -32,6 +32,7 @@
           success: function(data) {
             commands.push(data);
             this.setState({data: commands});
+            window.scrollTo(0,document.body.scrollHeight);
           }.bind(this),
           error: function(xhr, status, err) {
             console.error(this.props.url, status, err.toString());
