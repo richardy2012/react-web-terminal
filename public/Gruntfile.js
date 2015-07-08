@@ -14,13 +14,22 @@ module.exports = function(grunt) {
         }
       }
     },
+    react: {
+      combined_file_output: {
+        files: {
+          'js/components/components.js': [
+          ]
+        }
+      }
+    },
     watch: {
-      files: 'css/less/*',
-      tasks: ['less']
+      files: ['css/less/*', 'js/components/*'],
+      tasks: ['less', 'react']
     }
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-react');
 };
